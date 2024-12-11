@@ -58,6 +58,39 @@
 
 .card__image {
   position: relative;
+  border: 2px var(--accent-color) solid;
+}
+
+.gray_bg {
+  background-color: rgba(166, 182, 197, 0.8);
+}
+
+.blue_bg {
+  background-color: rgb(43 123 177 / 80%);
+}
+
+.orange_bg {
+  background-color: rgba(255, 74, 19, 0.6);
+}
+
+.purple_bg {
+  background-color: rgba(180, 46, 233, 0.6);
+}
+
+.green_bg {
+  background-color: rgba(78, 236, 117, 0.6);
+}
+
+.red_bg {
+  background-color: rgba(248, 70, 100, 0.6);
+}
+
+.dark_bg {
+  background-color: rgba(35, 3, 37, 0.6);
+}
+
+.space_bg {
+  background-color: rgba(23, 7, 99, 0.842);
 }
 
 .card__image-img {
@@ -66,6 +99,7 @@
   block-size: 100%;  
   object-fit: cover;
   object-position: center;
+  image-rendering: pixelated;
 }
 
 .card__image-label {
@@ -87,7 +121,7 @@
 }
 
 .card__title {
-  padding: 4px 10px;
+  padding: 7px 12px 5px;
   font-size: 18px;
   font-variation-settings: 'wght' var(--title-weight);
 }
@@ -99,11 +133,25 @@
   gap: 25px;
 }
 
+.card__description-memory-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.author {
+  text-align: right;
+  font-family: var(--accent-font);
+  font-style: italic;
+  font-size: 10px;
+  padding-right: 20px;
+}
+
 .card__button {
   padding: 0 25px 25px;
   display: flex;
   justify-content: right;
-  gap: 12px;
+  gap: 5px;
 }
 
 .card__icon-button {
@@ -212,7 +260,7 @@ dialog[open]::backdrop {
 }
 
 .filter_blur {
-  filter: blur(1px);
+  filter: blur(5px);
 }
 
 .filter_opac {
@@ -233,10 +281,14 @@ dialog[open]::backdrop {
 
 /*АНИМАЦИЯ*/
 /*Прямоугольная кнопка*/
-.rect-button:focus {
+.rect-button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 var(--accent-color);
   transition: box-shadow 0.5s;
+}
+
+.rect-button:focus {
+  outline: none;
 }
 
 .rect-button:after {
