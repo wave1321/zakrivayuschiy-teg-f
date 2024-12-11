@@ -1,7 +1,4 @@
-/* В этом файле уже написаны некоторые базовые стили, которые сбрасывают или преобразуют дефольное браузерное поведение.
-Здесь же лежит утилитарный класс visually-hidden на случай, если нужно скрыть какой-то элемент, но оставить доступным для скринридера.
-Вы можете изменять этот файл или дополнять. Но скорее всего, вам это не потребуется. */
-
+/* Глобальные стили для проекта*/
 *,
 *::after,
 *::before {
@@ -10,6 +7,10 @@
 
 body {
   margin: 0;
+  padding: 0;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: 'wght' var(--text-weight);
+  font-size: 18px;
 }
 
 h1,
@@ -51,3 +52,37 @@ ol {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+/*Ширина контента*/
+.block {
+  width: var(--block-width);
+}
+
+/*Дополнительный шрифт*/
+.accent-font {
+  font-family: var(--accent-font), sans-serif;
+}
+
+/*Настройка кнопок*/
+.button {
+  background-color: transparent;
+  border: 2px #000 solid;
+  padding: 12.5px auto;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  color: var(--main-color);
+}
+
+.button__text {
+  position: relative;
+  z-index: 3;
+  mix-blend-mode: difference;
+}
+
+.rect-button svg {
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
