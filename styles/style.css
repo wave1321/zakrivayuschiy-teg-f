@@ -48,6 +48,7 @@
   }
 }
 
+/*Карточки*/
 .card {
   display: flex;
   flex-direction: column;
@@ -56,11 +57,13 @@
   background-color: var(--main-color);
 }
 
+/*Изображения*/
 .card__image {
   position: relative;
   border: 2px var(--accent-color) solid;
 }
 
+/*Фоны под изображения*/
 .gray_bg {
   background-color: rgba(166, 182, 197, 0.8);
 }
@@ -120,6 +123,7 @@
   }
 }
 
+/*Текст*/
 .card__title {
   padding: 7px 12px 5px;
   font-size: 18px;
@@ -147,6 +151,7 @@
   padding-right: 20px;
 }
 
+/*Кнопки*/
 .card__button {
   padding: 0 25px 25px;
   display: flex;
@@ -206,7 +211,7 @@
   }  
 }
 
-/*СЕКЦИЯ POPUP*/
+/*СЕКЦИЯ DIALOG*/
 .dialog {
   flex-direction: column;
   gap: 30px;
