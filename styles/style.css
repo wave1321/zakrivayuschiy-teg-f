@@ -182,14 +182,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 52px 34px 100px;
-  padding: 15px 18px;
+  margin: 0 auto 93px;
+  padding: 15px 20px;
   gap: 8px;
   background-color: var(--main-color);
   
   @media (width >= 768px) {
     flex-direction: row;
-    margin: 50px auto 103px;
+    margin: 0 auto 105px;
   }
 }
 
