@@ -137,7 +137,7 @@
   gap: 25px;
 }
 
-.card__description-memory-text {
+.card__description-text {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -145,7 +145,7 @@
 
 .author {
   text-align: right;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-style: italic;
   font-size: 10px;
   padding-right: 20px;
@@ -165,6 +165,7 @@
   max-block-size: 38px;
   outline: 2px transparent solid;
   outline-offset: -2px;
+  transition: outline-color 0.3s ease;
 }
 
 .card__like-button {
@@ -176,28 +177,19 @@
   justify-content: center;
 }
 
-/*СЕКЦИЯ FOOTER*/
-.footer {
-  display: flex;
-  justify-content: center;
-  margin: 52px 34px 100px;
-
-  @media (width >= 768px) {
-    margin: 50px auto 103px;
-  }
-}
-
 .save-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 52px 34px 100px;
   padding: 15px 18px;
   gap: 8px;
   background-color: var(--main-color);
-
+  
   @media (width >= 768px) {
     flex-direction: row;
+    margin: 50px auto 103px;
   }
 }
 
@@ -228,7 +220,7 @@
   display: flex;
 }
 
-dialog[open]::backdrop {
+.dialog[open]::backdrop {
   background-color: var(--accent-color);
   opacity: 75%;
 }
@@ -286,10 +278,13 @@ dialog[open]::backdrop {
 
 /*АНИМАЦИЯ*/
 /*Прямоугольная кнопка*/
+.rect-button {
+  transition: box-shadow 0.5s;
+}
+
 .rect-button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 var(--accent-color);
-  transition: box-shadow 0.5s;
 }
 
 .rect-button:focus {
@@ -322,53 +317,52 @@ dialog[open]::backdrop {
 
 .card__icon-button:focus-visible {
   outline: 2px var(--accent-color) solid;
-  transition: outline-color 0.3s ease;
 }
 
 /*Наведение*/
 .card__icon-button:hover .like-icon .heart .core {
   fill: var(--heart-default-color);
-  transition: fill .3s;
+  transition: fill .3s linear;
 }
 
 .card__icon-button .like-icon .heart .core {
-  transition: fill .3s .03s;
+  transition: fill .3s .03s linear;
 }
 
 .card__icon-button:hover .like-icon .heart .main-body {
   fill: var(--heart-default-color);
-  transition: fill .3s .05s;
+  transition: fill .3s .05s linear;
 }
 
 .card__icon-button .like-icon .heart .main-body {
-  transition: fill .3s;
+  transition: fill .3s linear;
 }
 
 /*Зажатие*/
 .card__icon-button:active .like-icon .heart .core {
   fill: var(--heart-bright-color);
-  transition: fill .3s;
+  transition: fill .3s linear;
 }
 
 .card__icon-button:active .like-icon .heart .main-body {
   fill: var(--heart-bright-color);
-  transition: fill .3s .05s;
+  transition: fill .3s .05s linear;
 }
 
 /*Отпускание*/
 .card__icon-button .like-icon.is-liked .heart .core {
   fill: var(--heart-bright-color);
-  transition: fill .3s;
+  transition: fill .3s linear;
 }
 
 .card__icon-button .like-icon.is-liked .heart .main-body {
   fill: var(--heart-bright-color);
-  transition: fill .3s .05s;
+  transition: fill .3s .05s linear;
 }
 
 .card__icon-button .like-icon.is-liked .heart .contour {
   fill: var(--heart-bright-color);
-  transition: fill .3s .06s;
+  transition: fill .3s .06s linear;
 }
 
 .card__icon-button .like-icon.is-liked .heart {
@@ -380,25 +374,10 @@ dialog[open]::backdrop {
   animation: sparks .3s .3s ease-in;
 }
 
-@keyframes scaling {
-  from {
-    scale: 1;
-  }
-  to {
-    scale: 1.25;
-  }
-}
-
-@keyframes sparks {
-  to {
-    opacity: 1;
-  }
-}
-
 /*Снятие*/
 .card__icon-button .like-icon .heart .contour {
   fill: var(--heart-default-color);
-  transition: fill .1s;
+  transition: fill .1s linear;
 }
 
 /*ОПЦИОНАЛЬНО*/
